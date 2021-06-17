@@ -176,7 +176,9 @@ def readEnergySystemModelFromExcel(fileName='scenarioInput.xlsx', engine='openpy
             print("fn", fn)
             print("comp", comp)
             print("esM", esM)
-            print("kwargs", **kwargs)
+            print("kwargs")
+            for arg in **kwargs:
+                print(arg)
             esM.add(getattr(fn, comp)(esM, **kwargs))
 
     return esM, esMData
