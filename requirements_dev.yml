@@ -1,0 +1,7 @@
+name: FINE
+
+dependencies:
+  - pytest
+  - pytest-cov
+  - pylint
+  - conda-forge::nbval
