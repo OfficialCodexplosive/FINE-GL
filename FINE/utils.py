@@ -628,6 +628,7 @@ def checkDesignVariableModelingParameters(esM, capacityVariableDomain, hasCapaci
     if capacityVariableDomain != 'continuous' and capacityVariableDomain != 'discrete':
         raise ValueError('The capacity variable domain has to be either \'continuous\' or \'discrete\'.')
 
+    hasIsBuiltBinaryVariable = bool(int(hasIsBuiltBinaryVariable))
     if not isinstance(hasIsBuiltBinaryVariable, bool):
         raise TypeError(hasIsBuiltBinaryVariable, ': The hasCapacityVariable variable domain has to be a boolean.')
 
