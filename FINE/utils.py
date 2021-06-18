@@ -106,9 +106,9 @@ def checkTimeSeriesIndex(esM, data):
     Necessary if the data rows represent the time-dependent data:
     Check if the row-indices of the data match the time indices of the energy system model.
     """
+    str0 = ''.join(str(e)+", " for e in list(data.index))
+    str1 = ''.join(str(e)+", " for e in esM.totalTimeSteps)
     if list(data.index) != esM.totalTimeSteps:
-        str0 = ''.join(str(e)+", " for e in list(data.index))
-        str1 = ''.join(str(e)+", " for e in esM.totalTimeSteps)
         raise ValueError(str0 + ' / ' + str1 + 'Time indices do not match the one of the specified energy system model.')
 
 
