@@ -107,7 +107,8 @@ def checkTimeSeriesIndex(esM, data):
     Check if the row-indices of the data match the time indices of the energy system model.
     """
     if list(data.index) != esM.totalTimeSteps:
-        raise ValueError(str(list(data.index)) + ' / ' + esM.totalTimeSteps + 'Time indices do not match the one of the specified energy system model.')
+        print('[%s]' % ', '.join(map(str, data)))
+        raise ValueError(esM.totalTimeSteps + 'Time indices do not match the one of the specified energy system model.')
 
 
 def checkRegionalColumnTitles(esM, data):
